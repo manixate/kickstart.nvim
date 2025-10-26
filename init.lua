@@ -166,6 +166,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Enable this option to avoid conflicts of Biome with Prettier.
+vim.g.lazyvim_prettier_needs_config = true
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -735,6 +738,12 @@ require('lazy').setup({
         },
       }
     end,
+  },
+
+  { -- Typescript
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
   },
 
   { -- Autoformat
